@@ -57,19 +57,22 @@ function TodoList() {
         <>
             <div className='todo'>
                 <h1>Todolist</h1>
+
                 <TextField onChange={inputChanged} label='Description' name='description' value={todo.description} />
+                
                 <DatePicker inputFormat='ddMMyyyy' onChange={dateInputChanged} label="DD/MM/Year" name="date" value={dateInput} />
+                
                 <TextField onChange={inputChanged} label='Priority' name='priority' value={todo.priority} />
+                
                 <Button onClick={addTodo} variant='contained' color='success' size='small'>
                     Add
                 </Button>
+
                 <Button onClick={deleteTodo} variant='contained' color='error' size='small' startIcon={<DeleteIcon />}>
                     Delete
                 </Button>
 
-                <div className='ag-theme-material'
-                    style={{ height: '700px', width: '70%', margin: 'auto' }}>
-
+                <div className='ag-theme-material' style={{ height: '700px', width: '70%', margin: 'auto' }}>
                     <AgGridReact
                         ref={gridRef}
                         animateRows={true}
@@ -79,6 +82,7 @@ function TodoList() {
                         rowData={todos}>
                     </AgGridReact>
                 </div>
+                
             </div>
           </>
     );
